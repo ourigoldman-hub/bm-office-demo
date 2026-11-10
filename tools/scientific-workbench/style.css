@@ -1,0 +1,14 @@
+:root{font:16px/1.5 system-ui,sans-serif;color:#172b42;background:#f2f5f9;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}main{max-width:1240px;margin:0 auto;padding:32px 24px}
+header{margin-bottom:24px}.brand{font-weight:700;letter-spacing:.04em;color:#325c80}h1{font-size:2.2rem;line-height:1.2;margin:10px 0}h2{font-size:1.2rem;margin:0 0 18px}
+p{margin:8px 0}.status{display:inline-block;background:#fff2d2;color:#684610;padding:7px 12px;border-radius:6px;font-weight:600}
+.detail,#versions,footer{font-size:.88rem;color:#475970}.workspace{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:18px 0}
+section{background:white;border:1px solid #d7e0eb;border-radius:10px;padding:22px;min-width:0}
+label{display:block;font-weight:600;margin:14px 0 6px}select,textarea{display:block;width:100%;border:1px solid #9eafc3;border-radius:5px;padding:10px;font:inherit;background:white;color:inherit}
+textarea{resize:vertical;font:14px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+button{font:inherit;font-weight:600;border:0;border-radius:5px;padding:10px 15px;background:#164f83;color:white;cursor:pointer}button:disabled{opacity:.55;cursor:default}button:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #88b9e4;outline-offset:3px}
+#run{margin-top:14px}pre{background:#f4f7fb;border:1px solid #dce5ef;min-height:210px;max-height:390px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;border-radius:5px;padding:14px;font:13px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
+.session-title{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.session-title h2{margin:0}#history{padding-left:24px}#history li{margin:9px 0}#history button{background:#eaf1f8;color:#174b79;text-align:left;overflow-wrap:anywhere;max-width:100%}
+footer{padding-top:24px;max-width:90ch}#feedback{font-weight:600}
+.output-summary{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f7fb;border:1px solid #dce5ef;border-radius:5px;padding:16px;font-weight:600;min-height:100px}summary{cursor:pointer;color:#174b79;margin:14px 0}
+@media(max-width:760px){main{padding:20px 14px}.workspace{grid-template-columns:1fr}section{padding:17px}h1{font-size:1.85rem}.session-title button{width:100%}}

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#17324e"><meta name="description" content="BM OFFICE — בסיס ניסויי לבקרת מנות אספלט">
+  <link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css"><title>BM OFFICE — אב־טיפוס ארכיטקטוני</title>
+</head><body>
+<header><div class="wrap heading"><div><div class="eyebrow">BM OFFICE / ARCHITECTURAL FOUNDATION</div><h1>בקרת מנת אספלט</h1><p>אב־טיפוס מקומי — נתוני טיוטה בלבד, ללא החלטת התאמה</p></div><span class="tag" id="online-state">בדיקת חיבור…</span></div></header>
+<main class="wrap">
+<section class="notice" role="note"><strong>גבול האימות:</strong> לא הוטמעו נוסחאות, ספים, חישובים מקצועיים או אישור אחראי. אין להשתמש במערכת לצורך החלטות הנדסיות, תיעוד מוסמך או פעילות מסחרית.</section>
+<section class="card" aria-labelledby="context-title">
+  <h2 id="context-title">זיהוי הפרויקט ומנת האספלט</h2>
+  <div class="row-fields"><label>שם / מזהה פרויקט<input id="project-name" maxlength="160" placeholder="יש להזין את מזהה הפרויקט"></label><label>מזהה מנת אספלט<input id="lot-id" maxlength="160" placeholder="יש להזין מזהה מנה"></label></div>
+  <p class="hint">ההזנה נשמרת במכשיר זה. סנכרון לשרת המקומי מופעל רק בלחיצה על הכפתור המתאים.</p>
+  <div class="toolbar"><button id="sync" type="button" class="secondary">סנכרון ידני</button><button id="report" type="button" class="secondary">דוח טיוטה / שמירה ל־PDF</button><button id="export" type="button" class="secondary">ייצוא JSON</button></div>
+</section>
+<section class="card" aria-labelledby="forms-title"><h2 id="forms-title">חמשת טופסי הבקרה לפי הנחיות אוזב</h2><div id="tabs" class="tabs" role="tablist" aria-label="טופסי בקרה"></div><form id="draft-form"><div id="fields" class="form-grid"></div>
+<div class="row"><label class="file-label">קבצים ותמונות תומכים<input id="evidence" type="file" accept="image/png,image/jpeg,image/webp,application/pdf" multiple></label><span id="attachment-summary" class="hint"></span></div>
+<div class="toolbar"><button type="submit">שמירת טיוטה במכשיר</button><button type="button" id="clear-files" class="secondary">הסרת קבצים מצורפים מהטופס הפעיל</button></div></form></section>
+<section class="card status-card"><h2>סטטוס ותיחום</h2><div id="status" role="status" aria-live="polite">טרם נשמרו נתונים.</div><p class="hint">התנגשויות בגרסה של אותו טופס נחסמות להכרעה אנושית. עדכון טופס אחר באותה מנה אינו מתנגש איתו.</p></section>
+</main><footer class="wrap">BM OFFICE · גרסת יסוד 0.1 · טיוטות בלתי מאומתות בלבד</footer>
+<script src="./runtime-config.js"></script><script type="module" src="./app.mjs"></script></body></html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BM OFFICE — Revue du noyau</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./workbench.mjs"></script>
+</head>
+<body>
+  <main>
+    <header><p class="brand">BM OFFICE · Banc d’essai local</p><h1>Revue du noyau</h1>
+      <p>Examiner les entrées, les résultats candidats et les corrections à discuter.</p>
+      <p class="status">Expérimental · Qualification scientifique en attente</p>
+    </header>
+    <p id="versions"></p>
+    <div class="workspace">
+      <section aria-labelledby="input-heading">
+        <h2 id="input-heading">Préparer un essai</h2>
+        <label for="example">Exemple pédagogique S34</label>
+        <select id="example" disabled><option>Chargement…</option></select>
+        <p id="source" class="detail"></p>
+        <label for="request">Entrées JSON modifiables</label>
+        <textarea id="request" spellcheck="false" rows="15" aria-describedby="input-help"></textarea>
+        <p id="input-help" class="detail">Conserver les unités, les bases et la version explicites. Chaque exécution conserve le texte saisi.</p>
+        <button id="run" disabled>Exécuter l’essai candidat</button>
+      </section>
+      <section aria-labelledby="result-heading">
+        <h2 id="result-heading">Résultat à examiner</h2>
+        <p id="result-status" role="status" aria-live="polite">Aucun essai exécuté.</p>
+        <p id="output-summary" class="output-summary">Les sorties et diagnostics apparaîtront ici.</p>
+        <details><summary>Voir les entrées conservées et la traçabilité JSON</summary><pre id="result"></pre></details>
+        <label for="comment">Observation sur l’essai sélectionné</label>
+        <textarea id="comment" rows="3" disabled placeholder="Correction proposée, question ou réserve"></textarea>
+        <p class="detail">Cette observation ne prononce aucune qualification scientifique.</p>
+      </section>
+    </div>
+    <section aria-labelledby="session-heading">
+      <div class="session-title"><h2 id="session-heading">Essais de la session</h2><button id="export" disabled>Exporter la session JSON</button></div>
+      <p class="detail">Session en mémoire. Exporter pour conserver les essais avant de fermer la page. Aucun envoi externe.</p>
+      <ol id="history"></ol>
+      <p id="feedback" role="status" aria-live="polite"></p>
+    </section>
+    <footer>Outil de revue technique. Les résultats restent candidats ; aucune conformité n’est calculée. L’application professionnelle demeure bloquée.</footer>
+  </main>
+</body>
+</html>

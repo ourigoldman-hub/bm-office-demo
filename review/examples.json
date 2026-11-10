@@ -1,0 +1,1017 @@
+{
+  "status": "INPUT_ONLY_WORKBOOK_AWAITING_INDEPENDENT_RESULTS",
+  "scientificQualification": "pending",
+  "engineVersion": "s34-candidate-0.3",
+  "presentationVersion": "s34-p8-half-even-candidate-2",
+  "fileSha256": {
+    "packages/scientific/candidate.mjs": "07c7fe4c450387d76011450f3084d7dc05b9c433a4822065341be5cb48342d2c",
+    "packages/scientific/presentation.mjs": "118b4d8e5bbcd3dbe78320e2823819acf0811bffb963414c7503358fafd5a3f4",
+    "tests/fixtures/scientific-cases.mjs": "12a480a7fd85e52f5d4db8a2af0554ce07194a368d358a6fdc9395abbb86d7fc",
+    "tests/fixtures/granulometry-s34.mjs": "3829808aa839819b7aeacdf31f0eb5f2a18c7db4416e12cd059314ef425a2740",
+    "tests/fixtures/presentation-cases.mjs": "465b263110302d335ed4964bfd2e9005a956d18bd7072ee1a114fdbfe9dc6327"
+  },
+  "cases": [
+    {
+      "id": "EX01/M01",
+      "methodId": "M01",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          246,
+          247
+        ],
+        "relations": [
+          "E248"
+        ]
+      },
+      "request": {
+        "methodId": "M01",
+        "methodVersion": "M01-s34-candidate-2",
+        "inputs": {
+          "grossDosage": {
+            "value": 0.4,
+            "unit": "kg/m²"
+          },
+          "residualFraction": {
+            "value": 0.6,
+            "unit": "1"
+          }
+        },
+        "context": {
+          "sourceCase": "EX01",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX03/M03",
+      "methodId": "M03",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          160,
+          358
+        ],
+        "relations": [
+          "E172"
+        ]
+      },
+      "request": {
+        "methodId": "M03",
+        "methodVersion": "M03-s34-candidate-2",
+        "inputs": {
+          "binderMass": {
+            "value": 6.18,
+            "unit": "kg"
+          },
+          "dryAggregateMass": {
+            "value": 120,
+            "unit": "kg"
+          }
+        },
+        "context": {
+          "sourceCase": "EX03",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX04/M04",
+      "methodId": "M04",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          156,
+          157
+        ],
+        "relations": [
+          "E163",
+          "E164"
+        ]
+      },
+      "request": {
+        "methodId": "M04",
+        "methodVersion": "M04-s34-candidate-2",
+        "inputs": {
+          "massContent": {
+            "value": 5.2,
+            "unit": "%"
+          }
+        },
+        "context": {
+          "sourceCase": "EX04",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX03/M05",
+      "methodId": "M05",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          358
+        ],
+        "relations": [
+          "E288",
+          "table128"
+        ]
+      },
+      "request": {
+        "methodId": "M05",
+        "methodVersion": "M05-s34-candidate-2",
+        "inputs": {
+          "binderContent": {
+            "value": 5.15,
+            "unit": "%",
+            "basis": "dry_aggregates"
+          }
+        },
+        "context": {
+          "sourceCase": "EX03",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX05/M06",
+      "methodId": "M06",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          226,
+          380
+        ],
+        "relations": [
+          "E234",
+          "table141"
+        ]
+      },
+      "request": {
+        "methodId": "M06",
+        "methodVersion": "M06-s34-candidate-2",
+        "inputs": {
+          "mass": {
+            "value": 1050,
+            "unit": "kg",
+            "basis": "wet"
+          },
+          "waterFraction": {
+            "value": 0.05,
+            "unit": "1",
+            "basis": "dry_mass"
+          }
+        },
+        "context": {
+          "sourceCase": "EX05",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX06/M07",
+      "methodId": "M07",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          138,
+          354,
+          355
+        ],
+        "relations": [
+          "E160",
+          "table126"
+        ]
+      },
+      "request": {
+        "methodId": "M07",
+        "methodVersion": "M07-s34-candidate-2",
+        "inputs": {
+          "fractions": [
+            {
+              "id": "10/14",
+              "proportion": {
+                "value": 0.18,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 1,
+                  "unit": "%"
+                }
+              ]
+            },
+            {
+              "id": "6/10",
+              "proportion": {
+                "value": 0.22,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 5,
+                  "unit": "%"
+                }
+              ]
+            },
+            {
+              "id": "2/6",
+              "proportion": {
+                "value": 0.2,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 75,
+                  "unit": "%"
+                }
+              ]
+            },
+            {
+              "id": "0/2",
+              "proportion": {
+                "value": 0.35,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                }
+              ]
+            },
+            {
+              "id": "filler",
+              "proportion": {
+                "value": 0.05,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                }
+              ]
+            }
+          ]
+        },
+        "context": {
+          "sourceCase": "EX06",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX07/M08",
+      "methodId": "M08",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          155
+        ],
+        "relations": [
+          "E161/unit-conversion"
+        ]
+      },
+      "request": {
+        "methodId": "M08",
+        "methodVersion": "M08-s34-candidate-2",
+        "inputs": {
+          "density": {
+            "value": 1,
+            "unit": "g/cm³"
+          }
+        },
+        "context": {
+          "sourceCase": "EX07",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX08/M09",
+      "methodId": "M09",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          157,
+          406
+        ],
+        "relations": [
+          "E165",
+          "E330"
+        ]
+      },
+      "request": {
+        "methodId": "M09",
+        "methodVersion": "M09-s34-candidate-1",
+        "inputs": {
+          "bulkDensity": {
+            "value": 2.39,
+            "unit": "1"
+          },
+          "maximumDensity": {
+            "value": 2.5,
+            "unit": "1"
+          },
+          "convention": "S34/RDC-01/synthetic"
+        },
+        "context": {
+          "sourceCase": "EX08",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX09/M10",
+      "methodId": "M10",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          157,
+          406
+        ],
+        "relations": [
+          "E166",
+          "E331"
+        ]
+      },
+      "request": {
+        "methodId": "M10",
+        "methodVersion": "M10-s34-candidate-1",
+        "inputs": {
+          "bulkRelativeDensity": {
+            "value": 2.39,
+            "unit": "1"
+          },
+          "aggregateBulkRelativeDensity": {
+            "value": 2.65,
+            "unit": "1"
+          },
+          "dryAggregateContent": {
+            "value": 94.8,
+            "unit": "%"
+          },
+          "convention": "S34/RDC-01/synthetic"
+        },
+        "context": {
+          "sourceCase": "EX09",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX10/M11",
+      "methodId": "M11",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          157,
+          406
+        ],
+        "relations": [
+          "E165",
+          "E166",
+          "E167",
+          "E332"
+        ]
+      },
+      "request": {
+        "methodId": "M11",
+        "methodVersion": "M11-s34-candidate-1",
+        "inputs": {
+          "bulkRelativeDensity": {
+            "value": 2.39,
+            "unit": "1"
+          },
+          "maximumRelativeDensity": {
+            "value": 2.5,
+            "unit": "1"
+          },
+          "aggregateBulkRelativeDensity": {
+            "value": 2.65,
+            "unit": "1"
+          },
+          "dryAggregateContent": {
+            "value": 94.8,
+            "unit": "%"
+          },
+          "convention": "S34/RDC-01/synthetic"
+        },
+        "context": {
+          "sourceCase": "EX10",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "EX11/M12",
+      "methodId": "M12",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          483
+        ],
+        "relations": [
+          "E358",
+          "E359"
+        ]
+      },
+      "request": {
+        "methodId": "M12",
+        "methodVersion": "M12-s34-candidate-2",
+        "inputs": {
+          "population": "S34/table222/example",
+          "cores": [
+            {
+              "id": "source-core-1",
+              "voids": {
+                "value": 4.7,
+                "unit": "%"
+              }
+            },
+            {
+              "id": "source-core-2",
+              "voids": {
+                "value": 5.2,
+                "unit": "%"
+              }
+            },
+            {
+              "id": "source-core-3",
+              "voids": {
+                "value": 4.9,
+                "unit": "%"
+              }
+            },
+            {
+              "id": "source-core-4",
+              "voids": {
+                "value": 5.8,
+                "unit": "%"
+              }
+            },
+            {
+              "id": "source-core-5",
+              "voids": {
+                "value": 5.4,
+                "unit": "%"
+              }
+            },
+            {
+              "id": "source-core-6",
+              "voids": {
+                "value": 4.5,
+                "unit": "%"
+              }
+            },
+            {
+              "id": "source-core-7",
+              "voids": {
+                "value": 5.6,
+                "unit": "%"
+              }
+            },
+            {
+              "id": "source-core-8",
+              "voids": {
+                "value": 5.1,
+                "unit": "%"
+              }
+            }
+          ]
+        },
+        "context": {
+          "sourceCase": "EX11",
+          "dataStatus": "pedagogical_synthetic"
+        }
+      }
+    },
+    {
+      "id": "S34/table126/full",
+      "methodId": "M07",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22",
+        "pages": [
+          138,
+          354,
+          355
+        ],
+        "relations": [
+          "E160",
+          "table126"
+        ]
+      },
+      "request": {
+        "methodId": "M07",
+        "methodVersion": "M07-s34-candidate-2",
+        "context": {
+          "sourceCase": "S34/table126/full",
+          "dataStatus": "pedagogical_synthetic"
+        },
+        "inputs": {
+          "fractions": [
+            {
+              "id": "10/14",
+              "proportion": {
+                "value": 0.18,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 20,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 14,
+                    "unit": "mm"
+                  },
+                  "value": 98,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 10,
+                    "unit": "mm"
+                  },
+                  "value": 15,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 6.3,
+                    "unit": "mm"
+                  },
+                  "value": 2,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 1,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 2,
+                    "unit": "mm"
+                  },
+                  "value": 0.5,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.5,
+                    "unit": "mm"
+                  },
+                  "value": 0.2,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.315,
+                    "unit": "mm"
+                  },
+                  "value": 0.1,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.08,
+                    "unit": "mm"
+                  },
+                  "value": 0.1,
+                  "unit": "%"
+                }
+              ]
+            },
+            {
+              "id": "6/10",
+              "proportion": {
+                "value": 0.22,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 20,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 14,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 10,
+                    "unit": "mm"
+                  },
+                  "value": 95,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 6.3,
+                    "unit": "mm"
+                  },
+                  "value": 35,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 5,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 2,
+                    "unit": "mm"
+                  },
+                  "value": 1,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.5,
+                    "unit": "mm"
+                  },
+                  "value": 0.5,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.315,
+                    "unit": "mm"
+                  },
+                  "value": 0.2,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.08,
+                    "unit": "mm"
+                  },
+                  "value": 0.2,
+                  "unit": "%"
+                }
+              ]
+            },
+            {
+              "id": "2/6",
+              "proportion": {
+                "value": 0.2,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 20,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 14,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 10,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 6.3,
+                    "unit": "mm"
+                  },
+                  "value": 98,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 75,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 2,
+                    "unit": "mm"
+                  },
+                  "value": 25,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.5,
+                    "unit": "mm"
+                  },
+                  "value": 2,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.315,
+                    "unit": "mm"
+                  },
+                  "value": 0.7,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.08,
+                    "unit": "mm"
+                  },
+                  "value": 0.2,
+                  "unit": "%"
+                }
+              ]
+            },
+            {
+              "id": "0/2",
+              "proportion": {
+                "value": 0.35,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 20,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 14,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 10,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 6.3,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 2,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.5,
+                    "unit": "mm"
+                  },
+                  "value": 42,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.315,
+                    "unit": "mm"
+                  },
+                  "value": 25,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.08,
+                    "unit": "mm"
+                  },
+                  "value": 11,
+                  "unit": "%"
+                }
+              ]
+            },
+            {
+              "id": "filler",
+              "proportion": {
+                "value": 0.05,
+                "unit": "1",
+                "basis": "dry_mass"
+              },
+              "passing": [
+                {
+                  "sieve": {
+                    "value": 20,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 14,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 10,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 6.3,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 4,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 2,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.5,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.315,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                },
+                {
+                  "sieve": {
+                    "value": 0.08,
+                    "unit": "mm"
+                  },
+                  "value": 100,
+                  "unit": "%"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "presentation": [
+    {
+      "id": "S34-p8-even-tie",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "page": 8,
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22"
+      },
+      "request": {
+        "decimal": "2.345",
+        "decimalPlaces": 2
+      }
+    },
+    {
+      "id": "S34-p8-odd-tie",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "page": 8,
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22"
+      },
+      "request": {
+        "decimal": "2.355",
+        "decimalPlaces": 2
+      }
+    },
+    {
+      "id": "S34-p8-above-tie",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "page": 8,
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22"
+      },
+      "request": {
+        "decimal": "2.3451",
+        "decimalPlaces": 2
+      }
+    },
+    {
+      "id": "S34-p8-four-significant",
+      "source": {
+        "document": "BM_OFFICE_S34_OFFICIEL.pdf",
+        "page": 8,
+        "sha256": "312a878ec69fc2f08d80fe492baa78c289e4d10ab9d63381be4a9dfb0951bd22"
+      },
+      "request": {
+        "decimal": "10.999276",
+        "significantDigits": 4
+      }
+    }
+  ],
+  "limits": "Inputs already transcribed by Codex; no candidate answers included. This does not establish blinded review or independent scientific qualification."
+}
