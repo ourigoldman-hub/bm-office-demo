@@ -5,45 +5,45 @@
  */
 export const FORM_DEFINITIONS = Object.freeze([
   {
-    id: 'support', title: 'קבלת שכבת התשתית',
+    id: 'support', title: 'Réception du support',
     fields: [
-      ['location', 'מיקום'], ['condition', 'מצב שכבת התשתית'],
-      ['cleanliness', 'ניקיון'], ['moisture', 'רטיבות'],
-      ['defects', 'ליקויים שנצפו'], ['photos', 'תמונות (בתור קבצים מצורפים)'],
-      ['preliminaryDecision', 'החלטה מקדימה'],
+      ['location', 'Localisation'], ['condition', 'État de la couche support'],
+      ['cleanliness', 'Propreté'], ['moisture', 'Humidité'],
+      ['defects', 'Défauts observés'], ['photos', 'Photos (pièces jointes)'],
+      ['preliminaryDecision', 'Décision préliminaire'],
     ],
   },
   {
-    id: 'tack', title: 'שכבת הדבקה',
+    id: 'tack', title: 'Couche d’accrochage',
     fields: [
-      ['product', 'מוצר'], ['batch', 'מנה'], ['dosage', 'מינון (עם יחידות)'],
-      ['area', 'שטח שטופל (עם יחידות)'], ['curing', 'מצב השבירה או האשפרה'],
-      ['observations', 'הערות'], ['evidence', 'אסמכתאות (בתור קבצים מצורפים)'],
+      ['product', 'Produit'], ['batch', 'Lot de produit'], ['dosage', 'Dosage (avec unités)'],
+      ['area', 'Surface traitée (avec unités)'], ['curing', 'État de rupture ou de cure'],
+      ['observations', 'Observations'], ['evidence', 'Justificatifs (pièces jointes)'],
     ],
   },
   {
-    id: 'trucks', title: 'קבלת המשאיות',
+    id: 'trucks', title: 'Réception des camions',
     fields: [
-      ['deliveryNote', 'תעודת משלוח'], ['approvedFormula', 'הרכב מאושר'],
-      ['tonnage', 'משקל בטונות'], ['times', 'שעות'],
-      ['temperatures', 'טמפרטורות (עם יחידות)'], ['observations', 'הערות בעת הקבלה'],
+      ['deliveryNote', 'Bon de livraison'], ['approvedFormula', 'Formule agréée'],
+      ['tonnage', 'Tonnage'], ['times', 'Heures'],
+      ['temperatures', 'Températures (avec unités)'], ['observations', 'Observations à la réception'],
     ],
   },
   {
-    id: 'laying', title: 'פריסה והידוק',
+    id: 'laying', title: 'Répandage et compactage',
     fields: [
-      ['layer', 'שכבה'], ['thickness', 'עובי (עם יחידות)'],
-      ['conditions', 'תנאי ביצוע'], ['temperatures', 'טמפרטורות (עם יחידות)'],
-      ['means', 'אמצעים שבהם נעשה שימוש'], ['passes', 'מעברים'],
-      ['incidents', 'אירועים חריגים'],
+      ['layer', 'Couche'], ['thickness', 'Épaisseur (avec unités)'],
+      ['conditions', 'Conditions de mise en œuvre'], ['temperatures', 'Températures (avec unités)'],
+      ['means', 'Moyens utilisés'], ['passes', 'Passes'],
+      ['incidents', 'Incidents'],
     ],
   },
   {
-    id: 'sampling', title: 'דגימות ובקרת מנת האספלט',
+    id: 'sampling', title: 'Échantillonnage et contrôle du lot',
     fields: [
-      ['samplingPlan', 'תוכנית דגימה'], ['sampleIds', 'מזהי הדגימות'],
-      ['laboratoryResults', 'תוצאות מעבדה'], ['deviations', 'חריגות'],
-      ['correctiveActions', 'פעולות מתקנות'],
+      ['samplingPlan', 'Plan d’échantillonnage'], ['sampleIds', 'Identifiants des échantillons'],
+      ['laboratoryResults', 'Résultats de laboratoire'], ['deviations', 'Écarts'],
+      ['correctiveActions', 'Actions correctives'],
     ],
   },
 ]);
@@ -51,7 +51,7 @@ export const FORM_BY_ID = Object.freeze(Object.fromEntries(FORM_DEFINITIONS.map(
 export const CONTRACT_VERSION = 'bm-office-note-2026-11-08/form-v1';
 export function recordId(projectName, lotId, type) {
   if (typeof projectName !== 'string' || !projectName.trim() || typeof lotId !== 'string' || !lotId.trim() || !FORM_BY_ID[type]) {
-    throw new Error('חסרים זיהוי פרויקט, מנת אספלט או סוג טופס');
+    throw new Error('Identifiant du projet, lot d’enrobé ou type de fiche manquant');
   }
   return [projectName.trim(), lotId.trim(), type].map(encodeURIComponent).join('::');
 }

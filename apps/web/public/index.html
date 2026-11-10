@@ -1,22 +1,22 @@
 <!doctype html>
-<html lang="he" dir="rtl"><head>
+<html lang="fr" dir="ltr"><head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#17324e"><meta name="description" content="BM OFFICE — בסיס ניסויי לבקרת מנות אספלט">
+  <meta name="theme-color" content="#17324e"><meta name="description" content="BM OFFICE — prototype de contrôle des lots d’enrobé">
   <link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css"><title>BM OFFICE — אב־טיפוס ארכיטקטוני</title>
+  <link rel="stylesheet" href="./style.css"><title>BM OFFICE — Fiches de contrôle et rapports</title>
 </head><body>
-<header><div class="wrap heading"><div><div class="eyebrow">BM OFFICE / ARCHITECTURAL FOUNDATION</div><h1>בקרת מנת אספלט</h1><p>אב־טיפוס מקומי — נתוני טיוטה בלבד, ללא החלטת התאמה</p></div><span class="tag" id="online-state">בדיקת חיבור…</span></div></header>
+<header><div class="wrap heading"><div><div class="eyebrow">BM OFFICE / PROTOTYPE</div><h1>Contrôle des lots d’enrobé</h1><p>Brouillons locaux · Aucune décision de conformité</p></div><span class="tag" id="online-state">Vérification de la connexion…</span></div></header>
 <main class="wrap">
-<section class="notice" role="note"><strong>גבול האימות:</strong> לא הוטמעו נוסחאות, ספים, חישובים מקצועיים או אישור אחראי. אין להשתמש במערכת לצורך החלטות הנדסיות, תיעוד מוסמך או פעילות מסחרית.</section>
+<section class="notice" role="note"><strong>État de validation :</strong> Aucun calcul scientifique qualifié, seuil de réception ou visa du responsable n’est activé dans ces fiches. Ce prototype ne constitue pas un document de contrôle approuvé.</section>
 <section class="card" aria-labelledby="context-title">
-  <h2 id="context-title">זיהוי הפרויקט ומנת האספלט</h2>
-  <div class="row-fields"><label>שם / מזהה פרויקט<input id="project-name" maxlength="160" placeholder="יש להזין את מזהה הפרויקט"></label><label>מזהה מנת אספלט<input id="lot-id" maxlength="160" placeholder="יש להזין מזהה מנה"></label></div>
-  <p class="hint">ההזנה נשמרת במכשיר זה. סנכרון לשרת המקומי מופעל רק בלחיצה על הכפתור המתאים.</p>
-  <div class="toolbar"><button id="sync" type="button" class="secondary">סנכרון ידני</button><button id="report" type="button" class="secondary">דוח טיוטה / שמירה ל־PDF</button><button id="export" type="button" class="secondary">ייצוא JSON</button></div>
+  <h2 id="context-title">Identification du projet et du lot d’enrobé</h2>
+  <div class="row-fields"><label>Nom ou identifiant du projet<input id="project-name" maxlength="160" placeholder="Saisir l’identifiant du projet"></label><label>Identifiant du lot d’enrobé<input id="lot-id" maxlength="160" placeholder="Saisir l’identifiant du lot"></label></div>
+  <p class="hint">La saisie est conservée sur cet appareil. La synchronisation manuelle est disponible uniquement si un serveur est configuré.</p>
+  <div class="toolbar"><button id="sync" type="button" class="secondary">Synchronisation manuelle</button><button id="report" type="button" class="secondary">Rapport de brouillon / enregistrer en PDF</button><button id="export" type="button" class="secondary">Exporter en JSON</button></div>
 </section>
-<section class="card" aria-labelledby="forms-title"><h2 id="forms-title">חמשת טופסי הבקרה לפי הנחיות אוזב</h2><div id="tabs" class="tabs" role="tablist" aria-label="טופסי בקרה"></div><form id="draft-form"><div id="fields" class="form-grid"></div>
-<div class="row"><label class="file-label">קבצים ותמונות תומכים<input id="evidence" type="file" accept="image/png,image/jpeg,image/webp,application/pdf" multiple></label><span id="attachment-summary" class="hint"></span></div>
-<div class="toolbar"><button type="submit">שמירת טיוטה במכשיר</button><button type="button" id="clear-files" class="secondary">הסרת קבצים מצורפים מהטופס הפעיל</button></div></form></section>
-<section class="card status-card"><h2>סטטוס ותיחום</h2><div id="status" role="status" aria-live="polite">טרם נשמרו נתונים.</div><p class="hint">התנגשויות בגרסה של אותו טופס נחסמות להכרעה אנושית. עדכון טופס אחר באותה מנה אינו מתנגש איתו.</p></section>
-</main><footer class="wrap">BM OFFICE · גרסת יסוד 0.1 · טיוטות בלתי מאומתות בלבד</footer>
+<section class="card" aria-labelledby="forms-title"><h2 id="forms-title">Les cinq fiches de contrôle selon les consignes d’Eusèbe</h2><div id="tabs" class="tabs" role="tablist" aria-label="Fiches de contrôle"></div><form id="draft-form"><div id="fields" class="form-grid"></div>
+<div class="row"><label class="file-label">Pièces justificatives et photos<span class="file-picker">Choisir des fichiers</span><input id="evidence" type="file" aria-label="Choisir des pièces justificatives et des photos" accept="image/png,image/jpeg,image/webp,application/pdf" multiple></label><span id="attachment-summary" class="hint"></span></div>
+<div class="toolbar"><button type="submit">Enregistrer le brouillon sur cet appareil</button><button type="button" id="clear-files" class="secondary">Retirer les pièces jointes de la fiche active</button></div></form></section>
+<section class="card status-card"><h2>État de la fiche</h2><div id="status" role="status" aria-live="polite">Aucune donnée enregistrée.</div><p class="hint">Une modification concurrente de la même fiche est bloquée pour décision humaine. La modification d’une autre fiche du même lot reste indépendante.</p></section>
+</main><footer class="wrap">BM OFFICE · Prototype 0.1 · Brouillons non validés uniquement</footer>
 <script src="./runtime-config.js"></script><script type="module" src="./app.mjs"></script></body></html>

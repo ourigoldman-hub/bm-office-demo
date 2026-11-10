@@ -1,14 +1,14 @@
 {
-  "name": "BM OFFICE — אב־טיפוס בקרת אספלט",
+  "name": "BM OFFICE — Contrôle des lots d’enrobé",
   "short_name": "BM OFFICE",
-  "description": "אב־טיפוס Offline-First לא מאומת",
+  "description": "Prototype Offline First non validé",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#f5f7f9",
   "theme_color": "#17324e",
-  "lang": "he",
-  "dir": "rtl",
+  "lang": "fr",
+  "dir": "ltr",
   "icons": [
     {
       "src": "./icon.svg",

@@ -33,11 +33,11 @@ async function localAll(){const database=await db();return new Promise((resolve,
 function message(value){$('status').textContent=value;}
 function context(){return {projectName:project.value.trim(),lotId:lot.value.trim()};}
 function requireContext(){
-  const {projectName,lotId}=context();if(!projectName||!lotId)throw new Error('יש להזין שם פרויקט ומזהה מנת אספלט.');
+  const {projectName,lotId}=context();if(!projectName||!lotId)throw new Error('Saisir le nom du projet et l’identifiant du lot d’enrobé.');
   return {projectName,lotId};
 }
 function setConnection(){
-  $('online-state').textContent=navigator.onLine?'הדפדפן מדווח: מחובר':'ללא רשת · שמירה מקומית';
+  $('online-state').textContent=navigator.onLine?'Navigateur en ligne':'Hors connexion · stockage local';
 }
 function renderTabs(){
   const tabs=$('tabs');tabs.replaceChildren();
@@ -59,14 +59,16 @@ function renderFields(record){
 }
 function updateAttachments(){
   $('attachment-summary').textContent=state.attachmentFiles.length?
-    `נשמרו ${state.attachmentFiles.length} קבצים מצורפים בטיוטה הנוכחית.`:'אין קבצים מצורפים לטופס הפעיל.';
+    `${state.attachmentFiles.length} pièce(s) jointe(s) dans le brouillon actuel.`:'Aucune pièce jointe pour la fiche active.';
 }
 async function loadCurrent(){
+  $('fields').setAttribute('aria-busy','true');
   const {projectName,lotId}=context();let envelope;
   if(projectName&&lotId) envelope=await localGet(recordId(projectName,lotId,state.active));
   state.current=envelope||null;renderFields(envelope?.record);
-  message(!projectName||!lotId?'יש להזין פרויקט ומנה לפני שמירה.':!envelope?'טרם נשמר טופס זה במכשיר.':
-    `${envelope.dirty?'שינויים מקומיים טרם סונכרנו.':'הטופס סונכרן.'}${envelope.conflict?' התנגשות: נדרשת הכרעה אנושית.':''}`);
+  $('fields').setAttribute('aria-busy','false');
+  message(!projectName||!lotId?'Saisir un projet et un lot avant d’enregistrer.':!envelope?'Aucun brouillon enregistré sur cet appareil pour cette fiche.':
+    `${!runtime.syncEnabled?'Brouillon local enregistré. Synchronisation serveur désactivée.':envelope.dirty?'Modifications locales non synchronisées.':'Fiche synchronisée.'}${envelope.conflict?' Conflit : une décision humaine est nécessaire.':''}`);
 }
 function readFileAsDataURL(file){return new Promise((resolve,reject)=>{
   const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(reader.error);reader.readAsDataURL(file);
@@ -74,15 +76,15 @@ function readFileAsDataURL(file){return new Promise((resolve,reject)=>{
 $('evidence').addEventListener('change',async e=>{
   try {
     for(const file of e.target.files){
-      if(file.size>1_500_000)throw new Error('כל קובץ מוגבל בגרסת יסוד זו ל־1.5 MB.');
-      if(!['image/jpeg','image/png','image/webp','application/pdf'].includes(file.type))throw new Error('סוג הקובץ אינו נתמך.');
-      if(state.attachmentFiles.length>=10)throw new Error('עד 10 קבצים לטופס.');
+      if(file.size>1_500_000)throw new Error('Chaque fichier est limité à 1,5 Mo dans ce prototype.');
+      if(!['image/jpeg','image/png','image/webp','application/pdf'].includes(file.type))throw new Error('Type de fichier non pris en charge.');
+      if(state.attachmentFiles.length>=10)throw new Error('Dix pièces jointes au maximum par fiche.');
       state.attachmentFiles.push({name:file.name,mime:file.type,dataUrl:await readFileAsDataURL(file)});
     }
-    updateAttachments();message('קבצים נוספו לטופס. יש לשמור את הטיוטה כדי לשמרם.');
+    updateAttachments();message('Pièces jointes ajoutées. Enregistrer le brouillon pour les conserver.');
   }catch(error){handleError(error)}finally{e.target.value=''}
 });
-$('clear-files').addEventListener('click',()=>{state.attachmentFiles=[];updateAttachments();message('הקבצים הוסרו מהטופס הפעיל; יש לשמור כדי לעדכן את הטיוטה.');});
+$('clear-files').addEventListener('click',()=>{state.attachmentFiles=[];updateAttachments();message('Pièces jointes retirées de la fiche active. Enregistrer pour mettre à jour le brouillon.');});
 $('draft-form').addEventListener('submit',async e=>{
   e.preventDefault();try{
     const {projectName,lotId}=requireContext();
@@ -92,11 +94,11 @@ $('draft-form').addEventListener('submit',async e=>{
       createdAt:existing?.record.createdAt});
     const envelope={id:record.id,record,baseRevision:existing?.baseRevision||0,dirty:true,conflict:existing?.conflict||false,changeSequence:(existing?.changeSequence||0)+1};
     await localPut(envelope);state.current=envelope;
-    message('הטיוטה נשמרה במכשיר. לא בוצע חישוב מדעי ולא נקבעה התאמה.');
+    message('Brouillon enregistré sur cet appareil. Aucun calcul scientifique ni décision de conformité effectué.');
   }catch(error){handleError(error)}
 });
 async function syncAll(){
-  if(!runtime.syncEnabled){message('הדגמה: הנתונים נשמרים במכשיר בלבד. סנכרון שרת אינו מופעל.');return;}
+  if(!runtime.syncEnabled){message('Démonstration : données conservées sur cet appareil uniquement. Synchronisation serveur désactivée.');return;}
   const {projectName,lotId}=requireContext();
   const envs=(await localAll()).filter(e=>e.record.projectName===projectName&&e.record.lotId===lotId);
   let sent=0,conflicts=0;
@@ -105,7 +107,7 @@ async function syncAll(){
     if(env.conflict){conflicts++;continue;}
     const response=await fetch(apiUrl('records'),{method:'PUT',headers:{'content-type':'application/json'},body:JSON.stringify({record:env.record,expectedRevision:env.baseRevision})});
     if(response.status===409){env.conflict=true;await localPut(env);conflicts++;continue;}
-    if(!response.ok)throw new Error('לא ניתן לסנכרן: '+(await response.text()).slice(0,200));
+    if(!response.ok)throw new Error('Synchronisation impossible : '+(await response.text()).slice(0,200));
     const result=await response.json();
     const latest=await localGet(env.id);
     if(latest){
@@ -116,7 +118,7 @@ async function syncAll(){
     sent++;
   }
   const response=await fetch(apiUrl('records')+'?'+new URLSearchParams({projectName,lotId}));
-  if(!response.ok)throw new Error('לא ניתן לקרוא את הנתונים מהשרת.');
+  if(!response.ok)throw new Error('Impossible de lire les données du serveur.');
   let received=0;
   for(const item of (await response.json()).records){
     const local=await localGet(item.record.id);
@@ -125,7 +127,7 @@ async function syncAll(){
     else if(local.dirty&&item.revision>local.baseRevision&&!local.conflict){local.conflict=true;await localPut(local);conflicts++;}
   }
   await loadCurrent();
-  message(`סנכרון: ${sent} טפסים נשלחו, ${received} התקבלו, ${conflicts} התנגשויות. ${conflicts?'יש לבדוק התנגשויות לפני המשך סנכרון.':''}`);
+  message(`Synchronisation : ${sent} fiche(s) envoyée(s), ${received} reçue(s), ${conflicts} conflit(s). ${conflicts?'Examiner les conflits avant de poursuivre la synchronisation.':''}`);
 }
 $('sync').addEventListener('click',()=>syncAll().catch(handleError));
 async function recordsForContext(){
@@ -136,9 +138,9 @@ async function recordsForContext(){
 $('report').addEventListener('click',async()=>{
   const win=window.open('','_blank'); // synchronous user gesture; avoids popup blocker
   try{
-    const context=await recordsForContext();if(!win)throw new Error('חלון ההדפסה נחסם בדפדפן.');
+    const context=await recordsForContext();if(!win)throw new Error('La fenêtre du rapport a été bloquée par le navigateur.');
     win.document.open();win.document.write(buildPrintableReport(context));win.document.close();
-    message('נפתח דוח טיוטה. השתמש בלחצן ההדפסה בחלון הדוח כדי לשמור כ־PDF במכשיר התומך בכך.');
+    message('Rapport de brouillon ouvert. Utiliser son bouton d’impression pour enregistrer en PDF si l’appareil le permet.');
   }catch(error){win?.close();handleError(error)}
 });
 $('export').addEventListener('click',async()=>{
@@ -146,17 +148,17 @@ $('export').addEventListener('click',async()=>{
     const context=await recordsForContext();const text=JSON.stringify({notice:'unverified_draft',data:context.envelopes},null,2);
     const url=URL.createObjectURL(new Blob([text],{type:'application/json'}));
     const a=document.createElement('a');a.href=url;a.download='bm-office-drafts.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-    message('קובץ JSON נוצר מנתוני המכשיר. יש לשמור אותו במקום מוגן.');
+    message('Export JSON créé à partir des données de cet appareil. Conserver le fichier dans un emplacement protégé.');
   }catch(error){handleError(error)}
 });
-function handleError(error){message('שגיאה: '+(error?.message||String(error)));}
+function handleError(error){message('Erreur : '+(error?.message||String(error)));}
 window.addEventListener('online',setConnection);window.addEventListener('offline',setConnection);
 project.value=localStorage.getItem('bm-project')||'';lot.value=localStorage.getItem('bm-lot')||'';
 for(const [el,key] of [[project,'bm-project'],[lot,'bm-lot']])el.addEventListener('change',()=>{localStorage.setItem(key,el.value);loadCurrent().catch(handleError)});
 const scientificState=calculate({methodId:'not-yet-defined'});
-if(scientificState.status!=='blocked_not_configured')throw new Error('Scientific core must fail closed.');
+if(scientificState.status!=='blocked_not_configured')throw new Error('Le noyau scientifique doit rester bloqué sans méthode qualifiée.');
 setConnection();renderTabs();loadCurrent().catch(handleError);
-if(!runtime.syncEnabled){$('sync').disabled=true;$('sync').textContent='הדגמה · ללא סנכרון שרת';}
+if(!runtime.syncEnabled){$('sync').disabled=true;$('sync').textContent='Démo · sans synchronisation serveur';}
 if(runtime.mode==='demo'){
   const note=document.createElement('p');note.lang='fr';note.dir='ltr';note.className='notice';
   note.textContent='Démonstration : brouillons conservés dans ce navigateur uniquement. Aucun partage ni synchronisation serveur. Utiliser des données fictives.';

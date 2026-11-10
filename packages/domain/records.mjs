@@ -22,24 +22,24 @@ export function makeDraft({projectName, lotId, type, fields = {}, attachments = 
 
 function copyAttachment(item) {
   if (!item || typeof item.name !== 'string' || typeof item.mime !== 'string' || typeof item.dataUrl !== 'string') {
-    throw new Error('מבנה קובץ מצורף לא תקין');
+    throw new Error('Structure de pièce jointe invalide');
   }
   if (item.name.length > 180 || item.dataUrl.length > 2_800_000 || !/^data:(image\/(png|jpeg|webp)|application\/pdf);base64,[A-Za-z0-9+/=]+$/.test(item.dataUrl)) {
-    throw new Error('קובץ מצורף אינו נתמך או גדול מדי');
+    throw new Error('Pièce jointe non prise en charge ou trop volumineuse');
   }
   return {name:item.name, mime:item.mime, dataUrl:item.dataUrl};
 }
 
 export function validateRecord(record) {
-  if (!record || typeof record !== 'object') throw new Error('רשומה חסרה');
+  if (!record || typeof record !== 'object') throw new Error('Enregistrement manquant');
   const rebuilt = makeDraft(record);
   if (record.id !== rebuilt.id || record.state !== RECORD_STATE || record.contractVersion !== CONTRACT_VERSION) {
-    throw new Error('מזהה, גרסה או מצב רשומה אינם תואמים');
+    throw new Error('Identifiant, version ou état de l’enregistrement incohérent');
   }
-  if (record.projectName.length > 160 || record.lotId.length > 160) throw new Error('זיהוי ארוך מדי');
-  if (record.attachments.length > 10) throw new Error('יותר מדי קבצים מצורפים');
-  for (const value of Object.values(rebuilt.fields)) if (value.length > 5000) throw new Error('שדה ארוך מדי');
-  if (!Number.isFinite(Date.parse(record.createdAt)) || !Number.isFinite(Date.parse(record.updatedAt))) throw new Error('תאריך לא תקין');
+  if (record.projectName.length > 160 || record.lotId.length > 160) throw new Error('Identifiant trop long');
+  if (record.attachments.length > 10) throw new Error('Trop de pièces jointes');
+  for (const value of Object.values(rebuilt.fields)) if (value.length > 5000) throw new Error('Champ trop long');
+  if (!Number.isFinite(Date.parse(record.createdAt)) || !Number.isFinite(Date.parse(record.updatedAt))) throw new Error('Date invalide');
   return rebuilt;
 }
 
