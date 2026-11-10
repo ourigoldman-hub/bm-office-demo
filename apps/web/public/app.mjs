@@ -164,4 +164,7 @@ if(runtime.mode==='demo'){
   note.textContent='Démonstration : brouillons conservés dans ce navigateur uniquement. Aucun partage ni synchronisation serveur. Utiliser des données fictives.';
   document.querySelector('main').prepend(note);
 }
-if(runtime.serviceWorkerEnabled&&'serviceWorker' in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{});
+if(runtime.serviceWorkerEnabled&&'serviceWorker' in navigator){
+  navigator.serviceWorker.register(runtime.serviceWorkerUrl,{updateViaCache:'none'})
+    .then(registration=>registration.update().catch(()=>{})).catch(()=>{});
+}

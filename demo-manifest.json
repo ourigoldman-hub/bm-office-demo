@@ -1,12 +1,14 @@
 {
   "mode": "public_demo",
-  "buildId": "8211a38b52db07e5",
+  "buildId": "ab8eefb1c902f00f",
   "scientificQualification": "pending",
   "syncEnabled": false,
   "fileSha256": {
     "index.html": "98a4bc3fc701b7cc6949e3dd1b303bfa9405fb275baeef5be1314e26647854ef",
     "demo.css": "01d16286d01a0fda46e13e09fb2fc9a43685889ea6f6af17594f4c07f1902f4d",
-    "demo.mjs": "423bd64059c5c99cb93f8262fcb41f752ec770c99f1369d6448da458a4f88993",
+    "demo.mjs": "38121f28d75104e7ed8a5b15a758cd27bfac441facd3d6545fa83e64a71624a8",
+    "mise-a-jour.html": "aa5054c18e180f70900a473f8c3446830df20f213db02bfa8d7a33367c8489a9",
+    "mise-a-jour.mjs": "a13211f62cba20fccccafe58f6378b3cddc9af9ed31e39e0ea1a2847c466f551",
     "packages/scientific/candidate.mjs": "07c7fe4c450387d76011450f3084d7dc05b9c433a4822065341be5cb48342d2c",
     "packages/scientific/core.mjs": "43305079df611fd7654adb284e44abf105b95aa319b06a5aa839f1abb8949c0e",
     "packages/scientific/presentation.mjs": "118b4d8e5bbcd3dbe78320e2823819acf0811bffb963414c7503358fafd5a3f4",
@@ -17,16 +19,16 @@
     "tools/scientific-workbench/session.mjs": "b7205a4991360a73db71da5fcf0796736a4bdddb03a11ba58b4dc6b8504156ac",
     "tools/scientific-workbench/workbench.mjs": "a882d9d60dce2a290a12b5b9a5dfbd2653e0e2130ff50058fd085602fc0cf5ef",
     "tools/scientific-workbench/style.css": "f4df8a3a48c6a92960c9407520520df8eaef76e076c7cf827cfa55a1f54a7706",
-    "apps/web/public/app.mjs": "670202eb3cac7ea21141d06b845d013f90016e9d75c3e999a23e575e9719170e",
-    "apps/web/public/runtime.mjs": "82860b7ef72e7359bbf76d7f2fd827f009716af2a667e7e72b984f6a53e3a571",
+    "apps/web/public/app.mjs": "66c6a8de5115d5bda486066a57381eadb4acf2bd4bb816031a399e3fb33ce541",
+    "apps/web/public/runtime.mjs": "d257c94abbcae6f4ac423fde93ecf4988772f3817ee106695d49ab07c57d4dab",
     "apps/web/public/style.css": "54aeaf8dfcb188703acfa74cef97f259621b32f1caea428286fb0bb72e7b56b9",
     "apps/web/public/icon.svg": "c39e818e2aa8d1728ab42e22e01ef21b6a88f479c94ccc7c2b3ef5325603c5d7",
     "review/examples.json": "e15cb4e132b668be4eb501d1d88e7c123530e2da6320ff3681e2a20937df1de7",
     "tools/scientific-workbench/index.html": "528918593fc2f5f30d16b6f7766926f5a4e5b2e72ff9ad8a83b3ced6c86feaa4",
     "apps/web/public/index.html": "604e9013cdba6f9af2fe6dfd913c33719eb4c25505546d7997765ba7bb11fcd4",
     "apps/web/public/manifest.webmanifest": "8373cead46a67bd051d0c79e5edf9f0e32b8fea48a9047dca31d5e847afd591e",
-    "apps/web/public/runtime-config.js": "ab7f00358c440b564e640b457579535ae06c5bd1363b3c5d2c8ab74b2c36cf63",
+    "apps/web/public/runtime-config.js": "2529e5b9130b117420eb917f2ce4f847cdc0a99410db77e50147599406822178",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "service-worker.js": "092a9a1ecaaf9d104733ab932343c3cb44062546cfdbf0db4ee718cb61ac4e08"
+    "service-worker.js": "151cd3fcb0aeb4c5c67f5ed637da9ef60a33f1490a1470f27e9f5b590d7be965"
   }
 }
